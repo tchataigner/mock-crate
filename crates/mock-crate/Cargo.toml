@@ -1,5 +1,7 @@
 [package]
 name = "mock-crate"
+description="Mock crate"
+license="MIT"
 version = "0.1.0"
 edition = "2018"
 
