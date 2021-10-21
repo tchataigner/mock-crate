@@ -22,7 +22,7 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: login
-          args: ${{secret.CARGO_LOGIN}}.
+          args: ${{secrets.CARGO_LOGIN}}.
 
   dry-run:
     name: Dry run
