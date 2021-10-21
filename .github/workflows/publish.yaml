@@ -4,6 +4,8 @@ on:
       - main
 
 name: Publish
+
+jobs:
   publish:
     name: Publsih
     runs-on: ubuntu-latest

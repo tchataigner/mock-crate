@@ -4,6 +4,8 @@ on:
       - main
 
 name: Publish dry run
+
+jobs:
   publish-dry-run:
     name: Publish dry run
     runs-on: ubuntu-latest
