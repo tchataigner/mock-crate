@@ -1,3 +1,8 @@
+# Basic flow where we do all generic tests:
+#   - `cargo workspaces exec cargo publish --dry-run`: Execute a dry run for publication on each crate in the repo, making sure
+#   that publication will be possible on merge
+
+# Publication flow should run on PR on the `main` branch
 on:
   pull_request:
     branches:

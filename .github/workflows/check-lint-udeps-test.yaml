@@ -1,3 +1,10 @@
+# Basic flow where we do all generic tests:
+#   - `cargo check`: Check that our crate compiles
+#   - `cargo fmt --all -- --check`: Checks that our crate follows basic Rust formatting
+#   - `cargo workspaces exec cargo +nightly udeps`: Makes sure that the branch does not have any unused dependencies
+#   - `cargo test`: Makes sure tests are passing
+
+# Basic checks should run on PR on `develop` or `main`
 on:
   pull_request:
     branches:

@@ -1,3 +1,7 @@
+# Basic flow where we do all generic tests:
+#   - `cargo workspaces exec cargo publish --token ***`: For every crate in our workspace, publish it on crates.io
+
+# Publication flow should run on merge on the `main` branch
 on:
   push:
     branches:
