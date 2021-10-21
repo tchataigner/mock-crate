@@ -19,5 +19,9 @@ jobs:
       - run: rustup component add rustfmt
       - uses: actions-rs/cargo@v1
         with:
-          command: publish
-          args: --dry-run --token ${{secrets.CARGO_LOGIN}}
+          command: install
+          args: cargo-workspaces
+      - uses: actions-rs/cargo@v1
+        with:
+          command: workspaces
+          args: exec cargo publish --dry-run
