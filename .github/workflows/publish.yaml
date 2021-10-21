@@ -19,8 +19,12 @@ jobs:
       - run: rustup component add rustfmt
       - uses: actions-rs/cargo@v1
         with:
-          command: publish
-          args: --token ${{secrets.CARGO_LOGIN}}
+          command: install
+          args: cargo-workspaces
+      - uses: actions-rs/cargo@v1
+        with:
+          command: workspaces
+          args: exec cargo publish --token ${{secrets.CARGO_LOGIN}}
 
   clippy:
     name: Clippy
