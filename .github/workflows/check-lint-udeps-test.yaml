@@ -55,6 +55,11 @@ jobs:
           profile: minimal
           toolchain: nightly
           override: true
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cargo/bin/
+          key: ${{ runner.os }}-cargo-bin
       - uses: actions-rs/cargo@v1
         with:
           command: install
