@@ -91,7 +91,7 @@ jobs:
         with:
           path: |
             ~/.cargo/bin/
-          key: ${{ runner.os }}-cargo-verify-project
+          key: ${{ runner.os }}-cargo-workspaces
       - uses: actions-rs/cargo@v1
         if: steps.cache-deps.outputs.cache-hit != 'true'
         with:
