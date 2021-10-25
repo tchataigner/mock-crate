@@ -56,15 +56,18 @@ jobs:
           toolchain: nightly
           override: true
       - uses: actions/cache@v2
+        id: cache-deps
         with:
           path: |
             ~/.cargo/bin/
-          key: ${{ runner.os }}-cargo-bin
+          key: ${{ runner.os }}-cargo-udeps
       - uses: actions-rs/cargo@v1
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         with:
           command: install
           args: cargo-workspaces
       - uses: actions-rs/cargo@v1
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         with:
           command: install
           args: cargo-udeps --locked
@@ -84,15 +87,18 @@ jobs:
           toolchain: nightly
           override: true
       - uses: actions/cache@v2
+        id: cache-deps
         with:
           path: |
             ~/.cargo/bin/
-          key: ${{ runner.os }}-cargo-bin
+          key: ${{ runner.os }}-cargo-verify-project
       - uses: actions-rs/cargo@v1
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         with:
           command: install
           args: cargo-workspaces
       - uses: actions-rs/cargo@v1
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         with:
           command: install
           args: cargo-verify-project
