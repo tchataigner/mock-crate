@@ -98,11 +98,6 @@ jobs:
           command: install
           args: cargo-workspaces
       - uses: actions-rs/cargo@v1
-        if: steps.cache-deps.outputs.cache-hit != 'true'
-        with:
-          command: install
-          args: cargo-verify-project
-      - uses: actions-rs/cargo@v1
         with:
           command: workspaces
           args: exec cargo verify-project
