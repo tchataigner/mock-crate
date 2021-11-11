@@ -2,6 +2,7 @@
 #   - `cargo check`: Check that our crate compiles
 #   - `cargo fmt --all -- --check`: Checks that our crate follows basic Rust formatting
 #   - `cargo workspaces exec cargo +nightly udeps`: Makes sure that the branch does not have any unused dependencies
+#   - `cargo workspaces exec cargo verify-project`: Makes sure that all cargo manifests in Rust crates are properly formatted
 #   - `cargo test`: Makes sure tests are passing
 
 # Basic checks should run on PR on `develop` or `main`
