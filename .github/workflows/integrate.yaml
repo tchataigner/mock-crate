@@ -12,7 +12,7 @@ on:
       - develop
 
 
-name: Check and Lint
+name: Integrate
 
 jobs:
   check:
